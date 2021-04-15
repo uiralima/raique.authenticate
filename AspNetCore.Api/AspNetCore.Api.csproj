@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Raique.Core">
+      <HintPath>..\..\Raique\Build\netstandard2.1\Raique.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Raique.Database">
+      <HintPath>..\..\Raique\Build\netstandard2.1\Raique.Database.dll</HintPath>
+    </Reference>
+    <Reference Include="Raique.Database.SqlServer">
+      <HintPath>..\..\Raique\Build\netstandard2.1\Raique.Database.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Raique.DependencyInjection">
+      <HintPath>..\..\Raique\Build\netstandard2.1\Raique.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Raique.JWT">
+      <HintPath>..\..\Raique\Build\netstandard2.1\Raique.JWT.dll</HintPath>
+    </Reference>
+    <Reference Include="Raique.Library">
+      <HintPath>..\..\Raique\Build\netstandard2.1\Raique.Library.dll</HintPath>
+    </Reference>
+    <Reference Include="Raique.Microservices.Authenticate">
+      <HintPath>..\..\Raique\Build\netstandard2.1\Raique.Microservices.Authenticate.dll</HintPath>
+    </Reference>
+    <Reference Include="Raique.Microservices.Authenticate.Infra">
+      <HintPath>..\..\Raique\Build\netstandard2.1\Raique.Microservices.Authenticate.Infra.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+
+</Project>

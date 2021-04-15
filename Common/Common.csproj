@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Raique.Authenticate.Common</AssemblyName>
+    <RootNamespace>Raique.Authenticate.Common</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Raique.Database">
+      <HintPath>..\..\Raique\Build\netstandard2.0\Raique.Database.dll</HintPath>
+    </Reference>
+    <Reference Include="Raique.Database.SqlServer">
+      <HintPath>..\..\Raique\Build\netstandard2.0\Raique.Database.SqlServer.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
