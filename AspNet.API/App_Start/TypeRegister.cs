@@ -1,5 +1,7 @@
 ﻿using AspNet.API.Controllers;
 using Raique.Authenticate.Common.Config;
+using Raique.Authenticate.Common.Contracts;
+using Raique.Authenticate.Common.Controllers;
 using Raique.Database.SqlServer.Contracts;
 using Raique.Microservices.Authenticate.Infra.SqlServer;
 using Raique.Microservices.Authenticate.Protocols;
@@ -24,6 +26,7 @@ namespace AspNet.API.App_Start
             #endregion
 
             #region Controllers
+            Raique.DependencyInjection.Repository.SetTransiente<ICreateAppControler, CreateAppControllerImpl>();
             Raique.DependencyInjection.Repository.SetTransiente<CreateAppController, CreateAppController>();
             Raique.DependencyInjection.Repository.SetTransiente<HomeController, HomeController>();
             #endregion

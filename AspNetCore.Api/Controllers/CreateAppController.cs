@@ -1,12 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Raique.Authenticate.Common.Contracts;
 using Raique.Authenticate.Common.Models;
-using Raique.Microservices.Authenticate.Protocols;
-using Raique.Microservices.Authenticate.UseCases;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace AspNetCore.Api.Controllers
@@ -16,22 +11,17 @@ namespace AspNetCore.Api.Controllers
     [ApiController]
     public class CreateAppController : ControllerBase
     {
-        private readonly IAppRepository _appRepository;
+        private readonly ICreateAppControler _controller;
 
-        public CreateAppController(IAppRepository appRepository)
+        public CreateAppController(ICreateAppControler controller)
         {
-            _appRepository = appRepository;
+            _controller = controller;
         }
+
         [HttpPost]
-        public async Task<string> Post([FromBody]App app)
+        public async Task<string> Post([FromBody] App app)
         {
-            return await CreateApp.Execute(_appRepository, app.Name);
-        }
-
-        [HttpGet]
-        public async Task<string> Get()
-        {
-            return await Task.Run(() => "Teste");
+            return await _controller.Post(app);
         }
     }
 }
