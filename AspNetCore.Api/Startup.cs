@@ -1,21 +1,14 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Raique.Authenticate.Common.Config;
 using Raique.Authenticate.Common.Contracts;
 using Raique.Authenticate.Common.Controllers;
 using Raique.Database.SqlServer.Contracts;
 using Raique.Microservices.Authenticate.Infra.SqlServer;
 using Raique.Microservices.Authenticate.Protocols;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace AspNetCore.Api
 {
@@ -34,6 +27,8 @@ namespace AspNetCore.Api
             services.AddControllers();
 
             services.AddSingleton<IDatabaseConfig, SqlServerConnection>();
+            services.AddSingleton<ITokenRepository, TokenRepositoryImpl>();
+            services.AddSingleton<IUserRepository, UserRepositoryImpl>();
             services.AddSingleton<IAppRepository, AppRepossitoryImpl>();
             services.AddScoped<ICreateAppControler, CreateAppControllerImpl>();
         }

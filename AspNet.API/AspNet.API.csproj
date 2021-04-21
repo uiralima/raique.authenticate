@@ -46,6 +46,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Raique.Common.HTTP">
+      <HintPath>..\..\Raique\Build\netstandard2.0\Raique.Common.HTTP.dll</HintPath>
+    </Reference>
+    <Reference Include="Raique.Common.HTTP.AspNet">
+      <HintPath>..\..\Raique\Build\netframework\Raique.Common.HTTP.AspNet.dll</HintPath>
+    </Reference>
     <Reference Include="Raique.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Raique\Build\netstandard2.0\Raique.Core.dll</HintPath>

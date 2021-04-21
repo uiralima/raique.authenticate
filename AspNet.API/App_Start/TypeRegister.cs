@@ -23,14 +23,16 @@ namespace AspNet.API.App_Start
 
             #region Repositórios
             Raique.DependencyInjection.Repository.SetSingleton<IAppRepository, AppRepossitoryImpl>();
+            Raique.DependencyInjection.Repository.SetSingleton<ITokenRepository, TokenRepositoryImpl>();
+            Raique.DependencyInjection.Repository.SetSingleton<IUserRepository, UserRepositoryImpl>();
             #endregion
 
             #region Controllers
             Raique.DependencyInjection.Repository.SetTransiente<ICreateAppControler, CreateAppControllerImpl>();
             Raique.DependencyInjection.Repository.SetTransiente<CreateAppController, CreateAppController>();
-            Raique.DependencyInjection.Repository.SetTransiente<HomeController, HomeController>();
             #endregion
         }
+
 
 
     }

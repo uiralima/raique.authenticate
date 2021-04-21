@@ -5,12 +5,13 @@ using System.Web.Http;
 
 namespace AspNet.API.Controllers
 {
-    public class CreateAppController : ApiController
+    public class CreateAppController : Raique.Common.HTTP.AspNet.Controller.Base
     {
         private readonly ICreateAppControler _controller;
 
         public CreateAppController(ICreateAppControler controller)
         {
+            
             _controller = controller;
         }
 

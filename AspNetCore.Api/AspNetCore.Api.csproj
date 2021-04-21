@@ -13,29 +13,35 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="Raique.Common.HTTP">
+      <HintPath>..\..\Raique\Build\netstandard2.0\Raique.Common.HTTP.dll</HintPath>
+    </Reference>
+    <Reference Include="Raique.Common.HTTP.AspNetCore">
+      <HintPath>..\..\Raique\Build\netcoreapp3.1\Raique.Common.HTTP.AspNetCore.dll</HintPath>
+    </Reference>
     <Reference Include="Raique.Core">
-      <HintPath>..\..\Raique\Build\netstandard2.1\Raique.Core.dll</HintPath>
+      <HintPath>..\..\Raique\Build\netstandard2.0\Raique.Core.dll</HintPath>
     </Reference>
     <Reference Include="Raique.Database">
-      <HintPath>..\..\Raique\Build\netstandard2.1\Raique.Database.dll</HintPath>
+      <HintPath>..\..\Raique\Build\netstandard2.0\Raique.Database.dll</HintPath>
     </Reference>
     <Reference Include="Raique.Database.SqlServer">
-      <HintPath>..\..\Raique\Build\netstandard2.1\Raique.Database.SqlServer.dll</HintPath>
+      <HintPath>..\..\Raique\Build\netstandard2.0\Raique.Database.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Raique.DependencyInjection">
-      <HintPath>..\..\Raique\Build\netstandard2.1\Raique.DependencyInjection.dll</HintPath>
+      <HintPath>..\..\Raique\Build\netstandard2.0\Raique.DependencyInjection.dll</HintPath>
     </Reference>
     <Reference Include="Raique.JWT">
-      <HintPath>..\..\Raique\Build\netstandard2.1\Raique.JWT.dll</HintPath>
+      <HintPath>..\..\Raique\Build\netstandard2.0\Raique.JWT.dll</HintPath>
     </Reference>
     <Reference Include="Raique.Library">
-      <HintPath>..\..\Raique\Build\netstandard2.1\Raique.Library.dll</HintPath>
+      <HintPath>..\..\Raique\Build\netstandard2.0\Raique.Library.dll</HintPath>
     </Reference>
     <Reference Include="Raique.Microservices.Authenticate">
-      <HintPath>..\..\Raique\Build\netstandard2.1\Raique.Microservices.Authenticate.dll</HintPath>
+      <HintPath>..\..\Raique\Build\netstandard2.0\Raique.Microservices.Authenticate.dll</HintPath>
     </Reference>
     <Reference Include="Raique.Microservices.Authenticate.Infra">
-      <HintPath>..\..\Raique\Build\netstandard2.1\Raique.Microservices.Authenticate.Infra.dll</HintPath>
+      <HintPath>..\..\Raique\Build\netstandard2.0\Raique.Microservices.Authenticate.Infra.dll</HintPath>
     </Reference>
   </ItemGroup>
 
