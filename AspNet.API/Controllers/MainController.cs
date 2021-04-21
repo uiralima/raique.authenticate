@@ -1,14 +1,11 @@
 ﻿using Raique.Commom.Controller;
-using Raique.Common.HTTP.AspNetCore.Controller;
-using Raique.Microservices.Authenticate.Protocols;
 
-namespace AspNetCore.Api.Controllers
+namespace AspNet.API.Controllers
 {
-    public abstract class MainController : Base
+    public abstract class MainController : Raique.Common.HTTP.AspNet.Controller.Base
     {
         private readonly IController _controller;
-
-        protected MainController(IController controller, ITokenRepository tokenRepository, IUserRepository userRepository) : base(tokenRepository, userRepository)
+        protected MainController(IController controller)
         {
             _controller = controller;
         }

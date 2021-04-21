@@ -28,7 +28,7 @@ namespace AspNet.API.App_Start
             #endregion
 
             #region Controllers
-            Raique.DependencyInjection.Repository.SetTransiente<ICreateAppControler, CreateAppControllerImpl>();
+            Raique.DependencyInjection.Repository.SetSingleton<ICreateAppControler, CreateAppControllerImpl>();
             Raique.DependencyInjection.Repository.SetTransiente<CreateAppController, CreateAppController>();
             #endregion
         }

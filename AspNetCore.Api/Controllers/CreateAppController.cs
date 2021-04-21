@@ -16,7 +16,7 @@ namespace AspNetCore.Api.Controllers
         private readonly ICreateAppControler _controller;
 
         public CreateAppController(ICreateAppControler controller,
-            ITokenRepository tokenRepository, IUserRepository userRepository) : base(tokenRepository, userRepository)
+            ITokenRepository tokenRepository, IUserRepository userRepository) : base(controller, tokenRepository, userRepository)
         {
             _controller = controller;
         }

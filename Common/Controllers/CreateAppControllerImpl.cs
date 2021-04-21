@@ -1,12 +1,13 @@
 ﻿using Raique.Authenticate.Common.Contracts;
 using Raique.Authenticate.Common.Models;
+using Raique.Commom.Controller;
 using Raique.Microservices.Authenticate.Protocols;
 using Raique.Microservices.Authenticate.UseCases;
 using System.Threading.Tasks;
 
 namespace Raique.Authenticate.Common.Controllers
 {
-    public class CreateAppControllerImpl: ICreateAppControler
+    public class CreateAppControllerImpl : BaseController, ICreateAppControler
     {
         private readonly IAppRepository _appRepository;
 
@@ -19,5 +20,8 @@ namespace Raique.Authenticate.Common.Controllers
         {
             return await CreateApp.Execute(_appRepository, app.Name);
         }
+
+        public override bool AppRequired => false;
+        public override bool UserRequired => false;
     }
 }
