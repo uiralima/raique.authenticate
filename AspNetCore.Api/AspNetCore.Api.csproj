@@ -13,8 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="Raique.Commom.Controller">
-      <HintPath>..\..\Raique\Build\netstandard2.0\Raique.Commom.Controller.dll</HintPath>
+    <Reference Include="Raique.Common.Controller">
+      <HintPath>..\..\Raique\Build\netstandard2.0\Raique.Common.Controller.dll</HintPath>
     </Reference>
     <Reference Include="Raique.Common.HTTP">
       <HintPath>..\..\Raique\Build\netstandard2.0\Raique.Common.HTTP.dll</HintPath>

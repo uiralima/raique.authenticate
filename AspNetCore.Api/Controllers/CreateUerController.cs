@@ -10,20 +10,20 @@ namespace AspNetCore.Api.Controllers
     [AllowAnonymous]
     [Route("api/[controller]")]
     [ApiController]
-    public class CreateAppController : MainController
+    public class CreateUerController : MainController
     {
-        private readonly ICreateAppControler _controller;
-
-        public CreateAppController(ICreateAppControler controller,
-            ITokenRepository tokenRepository, IUserRepository userRepository) : base(controller, tokenRepository, userRepository)
+        private readonly ICreateUserController _controller;
+        public CreateUerController(ICreateUserController controller,
+            ITokenRepository tokenRepository,
+            IUserRepository userRepository) : base(controller, tokenRepository, userRepository)
         {
             _controller = controller;
         }
 
         [HttpPost]
-        public async Task<string> Post([FromBody] App app)
+        public async Task<int> Post([FromBody]NewUser userData)
         {
-            return await _controller.Post(app);
+            return await _controller.Post(userData);
         }
     }
 }

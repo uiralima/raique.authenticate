@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="Raique.Commom.Controller">
-      <HintPath>..\..\Raique\Build\netstandard2.0\Raique.Commom.Controller.dll</HintPath>
+    <Reference Include="Raique.Common.Controller">
+      <HintPath>..\..\Raique\Build\netstandard2.0\Raique.Common.Controller.dll</HintPath>
     </Reference>
     <Reference Include="Raique.Database">
       <HintPath>..\..\Raique\Build\netstandard2.0\Raique.Database.dll</HintPath>

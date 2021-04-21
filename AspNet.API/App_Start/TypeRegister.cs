@@ -27,8 +27,13 @@ namespace AspNet.API.App_Start
             Raique.DependencyInjection.Repository.SetSingleton<IUserRepository, UserRepositoryImpl>();
             #endregion
 
-            #region Controllers
+            #region Controllers Base
             Raique.DependencyInjection.Repository.SetSingleton<ICreateAppControler, CreateAppControllerImpl>();
+            Raique.DependencyInjection.Repository.SetTransiente<ICreateUserController, CreateUserControllerImpl>();
+            #endregion
+
+            #region Controllers
+            //Raique.DependencyInjection.Repository.SetTransiente<CreateUserController, CreateUserController>();
             Raique.DependencyInjection.Repository.SetTransiente<CreateAppController, CreateAppController>();
             #endregion
         }

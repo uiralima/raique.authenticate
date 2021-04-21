@@ -25,12 +25,17 @@ namespace AspNetCore.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-
+            //Configuração
             services.AddSingleton<IDatabaseConfig, SqlServerConnection>();
+
+            //Repository
             services.AddSingleton<ITokenRepository, TokenRepositoryImpl>();
             services.AddSingleton<IUserRepository, UserRepositoryImpl>();
             services.AddSingleton<IAppRepository, AppRepossitoryImpl>();
+
+            //Controler
             services.AddScoped<ICreateAppControler, CreateAppControllerImpl>();
+            services.AddScoped<ICreateUserController, CreateUserControllerImpl>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
