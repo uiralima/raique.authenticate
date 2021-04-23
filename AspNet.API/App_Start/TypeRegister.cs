@@ -33,7 +33,7 @@ namespace AspNet.API.App_Start
             #endregion
 
             #region Controllers
-            //Raique.DependencyInjection.Repository.SetTransiente<CreateUserController, CreateUserController>();
+            Raique.DependencyInjection.Repository.SetTransiente<CreateUserController, CreateUserController>();
             Raique.DependencyInjection.Repository.SetTransiente<CreateAppController, CreateAppController>();
             #endregion
         }

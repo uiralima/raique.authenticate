@@ -10,10 +10,10 @@ namespace AspNetCore.Api.Controllers
     [AllowAnonymous]
     [Route("api/[controller]")]
     [ApiController]
-    public class CreateUerController : MainController
+    public class CreateUserController : MainController
     {
         private readonly ICreateUserController _controller;
-        public CreateUerController(ICreateUserController controller,
+        public CreateUserController(ICreateUserController controller,
             ITokenRepository tokenRepository,
             IUserRepository userRepository) : base(controller, tokenRepository, userRepository)
         {
