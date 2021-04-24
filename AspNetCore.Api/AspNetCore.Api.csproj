@@ -22,6 +22,9 @@
     <Reference Include="Raique.Common.HTTP.AspNetCore">
       <HintPath>..\..\Raique\Build\netcoreapp3.1\Raique.Common.HTTP.AspNetCore.dll</HintPath>
     </Reference>
+    <Reference Include="Raique.Common.Log">
+      <HintPath>..\..\Raique\Build\netstandard2.0\Raique.Common.Log.dll</HintPath>
+    </Reference>
     <Reference Include="Raique.Core">
       <HintPath>..\..\Raique\Build\netstandard2.0\Raique.Core.dll</HintPath>
     </Reference>

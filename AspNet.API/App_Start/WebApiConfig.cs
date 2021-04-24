@@ -16,6 +16,8 @@ namespace AspNet.API
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            config.DependencyResolver = new DependencyResolver(config.DependencyResolver);
         }
     }
 }

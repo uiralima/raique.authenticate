@@ -13,7 +13,8 @@ namespace AspNet.API.App_Start
     {
         public static void StartControllerDependencyInjectory()
         {
-            GlobalConfiguration.Configuration.DependencyResolver = new DependencyResolver(GlobalConfiguration.Configuration.DependencyResolver);
+            //Passado para o WebApiConfig
+            //GlobalConfiguration.Configuration.DependencyResolver = new DependencyResolver(GlobalConfiguration.Configuration.DependencyResolver);
         }
         public static void Init()
         {
@@ -28,13 +29,13 @@ namespace AspNet.API.App_Start
             #endregion
 
             #region Controllers Base
-            Raique.DependencyInjection.Repository.SetSingleton<ICreateAppControler, CreateAppControllerImpl>();
-            Raique.DependencyInjection.Repository.SetTransiente<ICreateUserController, CreateUserControllerImpl>();
+            Raique.DependencyInjection.Repository.SetSingleton<IAppControler, AppControllerImpl>();
+            Raique.DependencyInjection.Repository.SetTransiente<IUserController, UserControllerImpl>();
             #endregion
 
             #region Controllers
-            Raique.DependencyInjection.Repository.SetTransiente<CreateUserController, CreateUserController>();
-            Raique.DependencyInjection.Repository.SetTransiente<CreateAppController, CreateAppController>();
+            Raique.DependencyInjection.Repository.SetTransiente<UserController, UserController>();
+            Raique.DependencyInjection.Repository.SetTransiente<AppController, AppController>();
             #endregion
         }
 

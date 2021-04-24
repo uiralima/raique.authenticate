@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace Raique.Authenticate.Common.Controllers
 {
-    public class CreateAppControllerImpl : BaseController, ICreateAppControler
+    public class AppControllerImpl : BaseController, IAppControler
     {
         private readonly IAppRepository _appRepository;
 
-        public CreateAppControllerImpl(IAppRepository appRepository)
+        public AppControllerImpl(IAppRepository appRepository)
         {
             _appRepository = appRepository;
         }
 
-        public async Task<string> Post(App app)
+        public async Task<string> Create(App app)
         {
             return await CreateApp.Execute(_appRepository, app.Name);
         }

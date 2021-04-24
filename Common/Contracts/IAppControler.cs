@@ -4,8 +4,8 @@ using System.Threading.Tasks;
 
 namespace Raique.Authenticate.Common.Contracts
 {
-    public interface ICreateUserController : IController
+    public interface IAppControler : IController
     {
-        Task<int> Post(NewUser userData);
+        Task<string> Create(App app);
     }
 }

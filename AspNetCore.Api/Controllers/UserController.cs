@@ -8,22 +8,23 @@ using System.Threading.Tasks;
 namespace AspNetCore.Api.Controllers
 {
     [AllowAnonymous]
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
-    public class CreateUserController : MainController
+    public class UserController : MainController
     {
-        private readonly ICreateUserController _controller;
-        public CreateUserController(ICreateUserController controller,
+        private readonly IUserController _controller;
+        public UserController(IUserController controller,
             ITokenRepository tokenRepository,
             IUserRepository userRepository) : base(controller, tokenRepository, userRepository)
         {
             _controller = controller;
         }
 
+        [ActionName("Create")]
         [HttpPost]
-        public async Task<int> Post([FromBody]NewUser userData)
+        public async Task<int> Create([FromBody]NewUser userData)
         {
-            return await _controller.Post(userData);
+            return await _controller.Create(userData);
         }
     }
 }

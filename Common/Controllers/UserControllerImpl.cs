@@ -7,17 +7,17 @@ using System.Threading.Tasks;
 
 namespace Raique.Authenticate.Common.Controllers
 {
-    public class CreateUserControllerImpl : BaseController, ICreateUserController
+    public class UserControllerImpl : BaseController, IUserController
     {
         private readonly IAppRepository _appRepository;
         private readonly IUserRepository _userRepository;
 
-        public CreateUserControllerImpl(IAppRepository appRepository, IUserRepository userRepository)
+        public UserControllerImpl(IAppRepository appRepository, IUserRepository userRepository)
         {
             _appRepository = appRepository;
             _userRepository = userRepository;
         }
-        public async Task<int> Post(NewUser userData)
+        public async Task<int> Create(NewUser userData)
         {
             return await CreateUser.Execute(_appRepository, _userRepository, AppKey, userData.UserName, userData.Password);
         }

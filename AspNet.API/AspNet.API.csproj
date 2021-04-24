@@ -55,6 +55,10 @@
     <Reference Include="Raique.Common.HTTP.AspNet">
       <HintPath>..\..\Raique\Build\netframework\Raique.Common.HTTP.AspNet.dll</HintPath>
     </Reference>
+    <Reference Include="Raique.Common.Log, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Raique\Build\netstandard2.0\Raique.Common.Log.dll</HintPath>
+    </Reference>
     <Reference Include="Raique.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Raique\Build\netstandard2.0\Raique.Core.dll</HintPath>
@@ -173,8 +177,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\TypeRegister.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\CreateAppController.cs" />
-    <Compile Include="Controllers\CreateUserController.cs" />
+    <Compile Include="Controllers\AppController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="DependencyResolver.cs" />
     <Compile Include="Global.asax.cs">

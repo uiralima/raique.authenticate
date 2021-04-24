@@ -8,8 +8,8 @@ namespace AspNet.API
     public class ActivatorInternal : IHttpControllerActivator
     {
         public IHttpController Create(HttpRequestMessage request, HttpControllerDescriptor controllerDescriptor, Type controllerType)
-    {
-        return Raique.DependencyInjection.Repository.CreateInstance(controllerDescriptor.ControllerType.FullName) as IHttpController;
+        {
+            return Raique.DependencyInjection.Repository.CreateInstance(controllerDescriptor.ControllerType.FullName) as IHttpController;
+        }
     }
-}
 }

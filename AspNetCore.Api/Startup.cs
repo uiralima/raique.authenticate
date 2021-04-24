@@ -34,8 +34,8 @@ namespace AspNetCore.Api
             services.AddSingleton<IAppRepository, AppRepossitoryImpl>();
 
             //Controler
-            services.AddScoped<ICreateAppControler, CreateAppControllerImpl>();
-            services.AddScoped<ICreateUserController, CreateUserControllerImpl>();
+            services.AddScoped<IAppControler, AppControllerImpl>();
+            services.AddScoped<IUserController, UserControllerImpl>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

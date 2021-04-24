@@ -8,22 +8,23 @@ using System.Threading.Tasks;
 namespace AspNetCore.Api.Controllers
 {
     [AllowAnonymous]
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
-    public class CreateAppController : MainController
+    public class AppController : MainController
     {
-        private readonly ICreateAppControler _controller;
+        private readonly IAppControler _controller;
 
-        public CreateAppController(ICreateAppControler controller,
+        public AppController(IAppControler controller,
             ITokenRepository tokenRepository, IUserRepository userRepository) : base(controller, tokenRepository, userRepository)
         {
             _controller = controller;
         }
 
+        [ActionName("Create")]
         [HttpPost]
-        public async Task<string> Post([FromBody] App app)
+        public async Task<string> Create([FromBody] App app)
         {
-            return await _controller.Post(app);
+            return await _controller.Create(app);
         }
     }
 }

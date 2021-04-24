@@ -1,6 +1,6 @@
 ﻿namespace Raique.Authenticate.Common.Contracts
 {
-    interface ILoginController
+    public interface ILoginController
     {
     }
 }
