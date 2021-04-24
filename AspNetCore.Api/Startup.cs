@@ -7,6 +7,8 @@ using Raique.Authenticate.Common.Config;
 using Raique.Authenticate.Common.Contracts;
 using Raique.Authenticate.Common.Controllers;
 using Raique.Database.SqlServer.Contracts;
+using Raique.JWT;
+using Raique.JWT.Protocols;
 using Raique.Microservices.Authenticate.Infra.SqlServer;
 using Raique.Microservices.Authenticate.Protocols;
 
@@ -25,17 +27,26 @@ namespace AspNetCore.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            //Configuração
+            #region Configuração
             services.AddSingleton<IDatabaseConfig, SqlServerConnection>();
+            services.AddSingleton<IJWTConfig, JWTConfig>();
+            #endregion
 
-            //Repository
+            #region Repositórios
             services.AddSingleton<ITokenRepository, TokenRepositoryImpl>();
             services.AddSingleton<IUserRepository, UserRepositoryImpl>();
             services.AddSingleton<IAppRepository, AppRepossitoryImpl>();
+            #endregion
 
-            //Controler
+            #region Controllers Base
             services.AddScoped<IAppControler, AppControllerImpl>();
             services.AddScoped<IUserController, UserControllerImpl>();
+            services.AddScoped<ILoginController, LoginControllerImpl>();
+            #endregion
+
+            #region Token
+            services.AddScoped<ITokenCreator, TokenCreatorImpl>();
+            #endregion
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

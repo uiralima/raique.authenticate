@@ -16,6 +16,9 @@
     <Reference Include="Raique.Database.SqlServer">
       <HintPath>..\..\Raique\Build\netstandard2.0\Raique.Database.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Raique.JWT">
+      <HintPath>..\..\Raique\Build\netstandard2.0\Raique.JWT.dll</HintPath>
+    </Reference>
     <Reference Include="Raique.Microservices.Authenticate">
       <HintPath>..\..\Raique\Build\netstandard2.0\Raique.Microservices.Authenticate.dll</HintPath>
     </Reference>

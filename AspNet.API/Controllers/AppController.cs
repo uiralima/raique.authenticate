@@ -6,8 +6,6 @@ using System.Web.Http;
 
 namespace AspNet.API.Controllers
 {
-    [AllowAnonymous]
-    
     public class AppController : MainController
     {
         private readonly IAppControler _controller;
