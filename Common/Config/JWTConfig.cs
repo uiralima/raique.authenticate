@@ -1,7 +1,4 @@
 ﻿using Raique.JWT.Protocols;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Raique.Authenticate.Common.Config
 {

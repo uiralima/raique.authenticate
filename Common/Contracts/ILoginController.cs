@@ -7,5 +7,6 @@ namespace Raique.Authenticate.Common.Contracts
     public interface ILoginController : IController
     {
         Task<string> Login(LoginInfo login);
+        Task Logoff();
     }
 }

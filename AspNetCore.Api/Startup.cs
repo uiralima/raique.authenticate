@@ -42,10 +42,12 @@ namespace AspNetCore.Api
             services.AddScoped<IAppControler, AppControllerImpl>();
             services.AddScoped<IUserController, UserControllerImpl>();
             services.AddScoped<ILoginController, LoginControllerImpl>();
+            services.AddScoped<ITokenController, TokenControllerImpl>();
             #endregion
 
             #region Token
             services.AddScoped<ITokenCreator, TokenCreatorImpl>();
+            services.AddSingleton<ITokenInfoExtractor, TokenInfoExtractorImpl>();
             #endregion
         }
 

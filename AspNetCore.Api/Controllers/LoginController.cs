@@ -28,5 +28,11 @@ namespace AspNetCore.Api.Controllers
         {
             return await _controller.Login(login);
         }
+
+        [HttpDelete]
+        public async Task Logoff()
+        {
+            await _controller.Logoff();
+        }
     }
 }

@@ -35,16 +35,19 @@ namespace AspNet.API.App_Start
             Raique.DependencyInjection.Repository.SetSingleton<IAppControler, AppControllerImpl>();
             Raique.DependencyInjection.Repository.SetTransiente<IUserController, UserControllerImpl>();
             Raique.DependencyInjection.Repository.SetTransiente<ILoginController, LoginControllerImpl>();
+            Raique.DependencyInjection.Repository.SetTransiente<ITokenController, TokenControllerImpl>();
             #endregion
 
             #region Controllers
             Raique.DependencyInjection.Repository.SetTransiente<UserController, UserController>();
             Raique.DependencyInjection.Repository.SetTransiente<AppController, AppController>();
             Raique.DependencyInjection.Repository.SetTransiente<LoginController, LoginController>();
+            Raique.DependencyInjection.Repository.SetTransiente<TokenController, TokenController>();
             #endregion
 
             #region Token
             Raique.DependencyInjection.Repository.SetSingleton<ITokenCreator, TokenCreatorImpl>();
+            Raique.DependencyInjection.Repository.SetSingleton<ITokenInfoExtractor, TokenInfoExtractorImpl>();
             #endregion
         }
 

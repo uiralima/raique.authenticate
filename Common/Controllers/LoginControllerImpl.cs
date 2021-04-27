@@ -24,6 +24,11 @@ namespace Raique.Authenticate.Common.Controllers
                 _tokenCreator, AppKey, login.UserName, login.Password, Device);
         }
 
+        public async Task Logoff()
+        {
+            await Microservices.Authenticate.UseCases.Logoff.Execute(_tokenRepository, Token, Device);
+        }
+
         public override bool UserRequired => false;
     }
 }

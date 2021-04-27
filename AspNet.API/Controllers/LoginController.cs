@@ -15,10 +15,17 @@ namespace AspNet.API.Controllers
         {
             _controller = controller;
         }
+
         [HttpPost]
         public async Task<string> Login(LoginInfo login)
         {
             return await _controller.Login(login);
+        }
+
+        [HttpDelete]
+        public async Task Logoff()
+        {
+            await _controller.Logoff();
         }
     }
 }
