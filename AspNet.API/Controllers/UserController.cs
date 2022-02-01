@@ -20,5 +20,19 @@ namespace AspNet.API.Controllers
         {
             return await _controller.Create(userData);
         }
+
+        [Route("api/User/CreatePasswordRecovery")]
+        [HttpPost]
+        public async Task<string> CreatePasswordRecovery([FromBody]CreatePasswordRecovery data)
+        {
+            return await _controller.PasswordRecovery(data.UserName);
+        }
+        [Route("api/User/ChangePasswordWithCode")]
+        [HttpPost]
+        public async Task<bool> ChangePasswordWithCode([FromBody] ChangePasswordWithCode data)
+        {
+            return await _controller.ChangePasswordWithACode(data.UserName, data.Code, data.Password);
+        }
+
     }
 }

@@ -7,6 +7,7 @@ using Raique.JWT;
 using Raique.JWT.Protocols;
 using Raique.Microservices.Authenticate.Infra.SqlServer;
 using Raique.Microservices.Authenticate.Protocols;
+using Raique.Microservices.Authenticate.Services;
 using System.Web.Http;
 
 namespace AspNet.API.App_Start
@@ -29,6 +30,7 @@ namespace AspNet.API.App_Start
             Raique.DependencyInjection.Repository.SetSingleton<IAppRepository, AppRepossitoryImpl>();
             Raique.DependencyInjection.Repository.SetSingleton<ITokenRepository, TokenRepositoryImpl>();
             Raique.DependencyInjection.Repository.SetSingleton<IUserRepository, UserRepositoryImpl>();
+            Raique.DependencyInjection.Repository.SetSingleton<IPasswordRecoveryRepository, PasswordRecoveryRepositoryImpl>();
             #endregion
 
             #region Controllers Base
@@ -48,6 +50,10 @@ namespace AspNet.API.App_Start
             #region Token
             Raique.DependencyInjection.Repository.SetSingleton<ITokenCreator, TokenCreatorImpl>();
             Raique.DependencyInjection.Repository.SetSingleton<ITokenInfoExtractor, TokenInfoExtractorImpl>();
+            #endregion
+
+            #region Services
+            Raique.DependencyInjection.Repository.SetSingleton<ICodeCreator, CodeCreator>();
             #endregion
         }
 
